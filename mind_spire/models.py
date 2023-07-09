@@ -18,4 +18,4 @@ class User:
     _id: str
     email: str
     password: str
-    written_blogs: list[str] = field(default_factory=list)
+    written_blogs: List[str] = field(default_factory=list)
