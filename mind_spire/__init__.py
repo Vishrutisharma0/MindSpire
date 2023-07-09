@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def create_app(environ=None, start_response=None):
+def create_app():
     app=Flask(__name__)
     client=MongoClient(os.getenv("MONGODB_URI"))
     app.db=client.MindSpire
