@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime,date
+from typing import List
+
 @dataclass
 class Blog:
     _id: str
@@ -8,7 +10,7 @@ class Blog:
     created_at: date = field(default_factory=datetime.now().date)
     likes: int = 0
     shared: bool = False
-    liked_by: list[str] = field(default_factory=list)
+    liked_by: List[str] = field(default_factory=list)
 
 
 @dataclass
