@@ -39,7 +39,7 @@ def index():
     return render_template("index.html", title="MindSpire",blog_data=blog)
 
 
-@pages.get("/blog/<string:_id>")
+@pages.route("/blog/<string:_id>",methods=["GET"])
 @login_required
 def blog_details(_id: str):
     blog = Blog(**current_app.db.blogs.find_one({"_id": _id}))
@@ -215,7 +215,7 @@ def logout():
 
 
 
-@pages.get("/toggle-theme")
+@pages.route("/toggle-theme",methods=["GET"])
 def toggle_theme():
     current_theme = session.get("theme")
     if current_theme == "dark":
