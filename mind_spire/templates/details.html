@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block main_content %}
+
+<table class="table">
+
+    <colgroup>
+        <col style="width: 100%">
+        <col style="width: 15%">
+
+      
+    </colgroup>
+    <thead>
+        <tr class="table__header">
+            <th class="table__cell table__cell--header"></th>
+         
+            <th class="table__cell table__cell--header"></th>
+        </tr>
+    </thead>
+    <tbody>
+       
+            <tr>
+                <td class="table__cell">
+                    <p class="table__blogTitle">{{ blog.title }}</p>
+                    <p class="table__blogPost">{{ blog.post }}</p>
+           
+                </td>
+                <td class="table__cell">
+                    {% if blog.shared %}
+                        <span class="short">Already shared</span>
+                    {% else %}
+                        <a href="{{ url_for('pages.add_share', _id=blog._id) }} " class="table__link" >Share</a>
+                    {% endif %}
+                </td>
+                
+            </tr>
+         
+    </tbody>
+</table>
+
+
+<a href="{{ url_for('pages.add_post') }}" class="button button--add">
+    <span>+</span>
+</a>
+{% endblock %}

@@ -1,0 +1,606 @@
+:root {
+    --text-dark: #000;
+    --text-light: #fbf2f2;
+    --text-muted: #595959;
+  
+    --background-color: #fef9f8;
+    --accent-colour: #519dd9;
+    --accent-colour-2: #3bb54a;
+    --tag-colour: #e5e5e5;
+  
+    --border: 1.5px solid #000;
+    --heart-icon:#000;
+    --border-change: 1px solid black;
+  }
+  :root.dark-mode {  /* the element root is having a class dark mode*/
+    --text-dark: #fbf2f2;
+    --text-light: #000;
+    --text-muted: #595959;
+  
+    --background-color: #1c2023;
+    --accent-colour:  #519dd9;
+    --accent-colour-2: #3bb54a;
+    --tag-colour: var(--accent-colour-2);
+  
+    --border: 1.5px solid #fff;
+    --heart-icon:#fbf2f2;
+    --border-change: 1px solid white;
+  }
+  .button {
+    --background-color: #e2e8f0;
+    --background-color-hover: #bdd1eb;
+  }
+  .button1 {
+    --background-color: #e2e8f0;
+    --background-color-hover: #bdd1eb;
+  }
+  
+  
+  .form__field {
+    --background-color: #e8e5e5;
+  }
+  .form__field1 {
+    --background-color: #e8e5e5;
+  }
+  
+  .form__field,
+  .nav__link {
+    --border: 3px solid #519dd9;;
+    
+  }
+    
+  .form__field1,
+  .nav__link {
+    --border: 3px solid #519dd9;;
+    
+  }
+  
+  html {
+    /* Sets global font size on small devices */
+    font-size: 12px;
+   
+  }
+  
+  
+  /* When the screen width hits 960px, we increase the global font size to 14px. This changes
+     the scale of all of our relative units (the rems), keeping everything in proportion */
+  @media screen and (min-width: 60em) {
+    html {
+      font-size: 14px;
+      
+    }
+  }
+  
+  /* When the screen width hits 1200px, we once again increase the global font size, this time to 16px */
+  @media screen and (min-width: 75em) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+
+  
+  @media screen and (max-width: 390px) {
+    .nav__link:not(:last-child) {
+    
+      font-size: 10px;
+    
+    
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .nav__link:first-child {
+
+      margin-left: 1.5rem;
+    
+    
+    }
+  }
+  
+  
+  body {
+    /* Sets the shared font characteristics, so that that they can be inherited globally */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Frank Ruhl Libre', serif;
+    color: var(--text-dark);
+    line-height: 1.45;
+    background-color: var(--background-color);
+  }
+
+  .main{
+    flex-grow: 1;
+    padding: 3rem 1.5rem 2rem 1.5rem;
+  }
+
+  @media screen and (min-width:30em) {
+    .main{
+padding-top: 5rem;
+    }
+    
+  }
+
+  .header {
+    padding: 0 2rem;
+    border-bottom: var(--border);
+  }
+  
+  .header__logo {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .header__logo:hover {
+    color: var(--accent-colour);
+  }
+  
+  .logo__icon {
+    width: 2.5rem;
+    height: 5rem;
+    margin-bottom: -1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .logo__name {
+    margin-left: 0.5rem;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+  
+    /* limits the width of the navigation area to 1200px and centres it within the header */
+    max-width: 75rem;
+    margin: 0 auto;
+  }
+  
+  .nav {
+    display: flex;
+  }
+  
+  .nav__link {
+    /* Setting display: flex and align-items: center places the links inside the list items
+         vertically in the center of the list item */
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+  
+    /* Removes standard underlines from these links. Explicitly inherits text colour from the body */
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Sets the background colour and text colour of our navigation items when the item has 
+     the .nav__link--active class, indicating the current page */
+  .nav__link--active {
+    background: var(--accent-colour);
+    color: var(--text-light);
+  }
+  
+  /* Adds 1 relative unit of padding (determined by font size) to the right margin of all .nav__item
+     elements as long as they are not the last element in their parent */
+  .nav__link:not(:last-child) {
+    margin-right: 1rem;
+  }
+  
+  /* Adds a bottom border and applies a negative margin to the element, to nudge it over the
+     existing header bar border */
+  .nav__link:hover {
+    margin-bottom: -3px;
+    border-bottom: var(--border);
+  }
+  
+  .nav__item {
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  /* Sets the size of the icon (light/dark theme toggle) to be the same as the font size
+      So that it takes up more or less the same amount of space as the links */
+  .nav__icon {
+    width: 1em;
+    height: 1em;
+  }
+  
+  
+  /* Button styles that we'll share across our site */
+  .button {
+    /* In order to easily position our buttons, we're making them block level elements */
+    display: block;
+  
+    /* Removes any outlines added when the button is in focus */
+    outline: none;
+  
+    /* Setting the cursor to pointer indicates to a user that the button is a clickable element */
+    cursor: pointer;
+  
+    /* Again, with buttons we have to be explicit about inheriting font properties */
+    font-size: inherit;
+    font-family: inherit;
+  
+    /* Slows the background colour change effect when we hover over the button, making
+         it take 0.1s with an accelerating colour change */
+    transition: background 0.1s ease-in;
+  }
+  .button1 {
+    /* In order to easily position our buttons, we're making them block level elements */
+    display: block;
+  
+    /* Removes any outlines added when the button is in focus */
+    outline: none;
+  
+    /* Setting the cursor to pointer indicates to a user that the button is a clickable element */
+    cursor: pointer;
+  
+    /* Again, with buttons we have to be explicit about inheriting font properties */
+    font-size: inherit;
+    font-family: inherit;
+  
+    /* Slows the background colour change effect when we hover over the button, making
+         it take 0.1s with an accelerating colour change */
+    transition: background 0.1s ease-in;
+  }
+  
+  /* Utility class to use on links within text. */
+  .link {
+    text-decoration: none;
+    color: var(--accent-colour);
+    white-space: nowrap;
+  }
+
+  .link1 {
+    text-decoration: none;
+    color: var(--accent-colour);
+    white-space: nowrap;
+    text-align: center;
+ 
+  }
+ 
+  .link:hover {
+    text-decoration: underline;
+  }
+  .footer{
+    padding: 1rem 0;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+
+
+  .hometext {
+    font-size: 24px; /* Increase the font size to your desired value */
+    color: var(--accent-colour);
+    line-height: 150%;
+    font-family: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px; /* Set a maximum width for the text to prevent it from spanning the entire page */
+    white-space: nowrap;/* ensures text to be in single line */
+  }
+  
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 600px) {
+    .hometext {
+      font-size: 16px; /* Decrease the font size for smaller screens */
+      white-space: normal;
+      
+    }
+  }
+  
+    
+  
+  .form {
+    margin: 0 auto;
+    max-width: 30rem;
+    border: var(--border);
+    border-radius: 10%;
+    font-size: 1.2rem;
+  
+    /* An explicit background is required here, as it's actually transparent by default, and we
+         don't want to see the shadow element behind */
+    background: var(--background-color);
+  
+    /* This shadow is separated from the edges by 0.75rem, and shrunk by 0.2rem on the
+    top and bottom. */
+    box-shadow: 0.75rem 0.75rem 0 -0.2rem var(--accent-colour);
+  }
+  
+  .form1 {
+    margin: 0 auto;
+    max-width: 50rem;
+    border: var(--border);
+    font-size: 1.2rem;
+  
+    /* An explicit background is required here, as it's actually transparent by default, and we
+         don't want to see the shadow element behind */
+    background: var(--background-color);
+  
+    /* This shadow is separated from the edges by 0.75rem, and shrunk by 0.2rem on the
+    top and bottom. */
+ 
+  }
+  .form__container {
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  }
+  
+  /* The following media queries allow for more padding inside the form as the window
+     size increases */
+  @media screen and (min-width: 24.75em) {
+    .form__container {
+      padding-left: 2rem;
+    }
+  }
+  
+  @media screen and (min-width: 30em) {
+    .form__container {
+      padding-left: 2.5rem;
+    }
+  }
+  
+  .form__group {
+    /* Surrounds the label and input fields, placing the label above the input */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form__label {
+    margin-bottom: 0.5rem;
+  }
+  .form__label1 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .form__field {
+    /* Removes the border and the outline highlight when the text field is in focus */
+    outline: none;
+    border: none;
+  
+    /* Re-adds a bottom border which will be replaces when the field is in focus. This
+         is going to prevent any jumping when we add the border later */
+    border-bottom: 3px solid #fff;
+  
+    /* We have to be explicit about our text fields inheriting font properties */
+    font-size: inherit;
+    font-family: inherit;
+  
+    padding: 0.75rem 0.5rem;
+    background: var(--background-color);
+    max-width: 25rem;
+  }
+  
+  .form__field1 {
+    /* Removes the border and the outline highlight when the text field is in focus */
+  
+    border: var(--border-change);
+  
+    /* Re-adds a bottom border which will be replaces when the field is in focus. This
+         is going to prevent any jumping when we add the border later */
+    
+  
+    /* We have to be explicit about our text fields inheriting font properties */
+    font-size: inherit;
+    font-family: inherit;
+  
+    padding: 0.75rem 0.5rem;
+    background: var(--background-color);
+    max-width: 45rem;
+  }
+  
+  /* When the field is in focus, we change the border colour at the bottom to the accent colour */
+  .form__field:focus {
+    border-bottom: var(--border);
+  }
+  .form__field1:focus {
+    border-bottom: var(--border);
+  }
+  .form__small {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+  }
+  
+  .form__link {
+    text-decoration: none;
+    color: var(--accent-colour);
+  }
+  
+  .form__link:hover {
+    color: #d05656;
+  }
+  
+  .form__error {
+    margin-top: 0.5rem;
+  }
+  
+  .form__error,
+  .form__flash {
+    display: block;
+    padding: 0.1rem;
+    color: var(--text);
+    text-align: center;
+  }
+  
+  .form__error,
+  .form__flash--danger {
+  
+    color: #d05656;
+  }
+  
+  .form__flash {
+    margin: 1rem;
+    
+  }
+  
+  .form__flash--success {
+    color: green;
+  }
+  
+  /* Styles specific to the form buttons */
+  .button--form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto 0;
+    padding: 0.75rem 3rem;
+    border: none;
+    background: var(--background-color);
+   
+    height: 3rem; /* Adjust the height as desired */
+  width: 6rem; 
+  }
+  
+  
+  .button--form:hover {
+    background: var(--background-color-hover);
+  }
+  .button--form1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto 0;
+    padding: 0.75rem 3rem;
+    border: none;
+    background: var(--background-color);
+    height: 3rem; /* Adjust the height as desired */
+  width: 6rem; 
+ 
+  }
+  
+  .button--form1:hover {
+    background: var(--background-color-hover);
+  }
+  
+  .button--add {
+    position: fixed;
+    bottom: 2rem;
+    right: 0.8rem;
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    border: var(--border);
+    border-radius: 50%;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+
+  
+  @media screen and (min-width: 50em) {
+    .button--add {
+      right: 3rem;
+    }
+  }
+  
+  @media screen and (min-width: 80em) {
+    .button--add {
+      right: 4rem;
+    }
+  }
+  
+  .button--add:hover {
+    color: var(--text);
+    background-color: var(--accent-colour);
+  }
+  
+  .table {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+    border-spacing: 0;
+    
+  }
+  
+  .table__cell {
+    padding: 1.25rem 1rem;
+    
+  }
+  
+  .table__cell--header {
+    text-align: left;
+    padding: 0.5rem 1rem;
+   
+  }
+  
+  .table__link {
+    color: inherit;
+    text-decoration: none;
+    
+  }
+
+  
+  
+  
+  .table__blogTitle {
+    font-weight: 600;
+    
+  }
+
+  
+  .table__blogPost {
+    font-size: 0.87em;
+    max-width: 50rem;
+    text-align: justify;
+  }
+  
+  .table__empty {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .table__empty1 {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1.7rem;
+  }
+  .share__text {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+ 
+
+
+  
+
+  .table__link .heart-icon {
+    color: var(--heart-icon); /* Default color for heart icon */
+    padding: 1.25rem 1rem;
+    text-decoration: none;
+    
+}
+
+.table__link.liked .heart-icon {
+    color: red; /* Color for heart icon when liked */
+    padding: 1.25rem 1rem;
+    text-decoration: none;
+}
+
+
+.table__line {
+
+  border-bottom: var(--border);
+
+}
+
+.short{
+  color: #d05656;
+}

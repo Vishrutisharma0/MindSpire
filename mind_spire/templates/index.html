@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block main_content %}
+{% if blog_data %}
+<table class="table">
+
+    <colgroup>
+        <col style="width: 65%">
+        <col style="width: 25%">
+        <col style="width: 15%">
+    </colgroup>
+    <thead>
+        <tr class="table__header">
+            <th class="table__cell table__cell--header">Title</th>
+            <th class="table__cell table__cell--header">Date Created</th>
+            <th class="table__cell table__cell--header"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for blog in blog_data %}
+            <tr>
+                <td class="table__cell">
+                    <p class="table__blogTitle">{{ blog.title }}</p>
+                  
+           
+                </td>
+                <td class="table__cell">{{ blog.created_at }}</td>
+                <td class="table__cell"><a href="{{ url_for('pages.blog_details', _id=blog._id) }}" class="table__link">View</a></td>
+            </tr>
+            {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+<p class="table__empty">You haven't saved any blogs yet. <a href="{{ url_for('pages.add_post') }}" class="link">Save one!</a></p>
+<a href="{{ url_for('pages.share') }}" class="link1">
+    <span class="table__empty1">Tap here to explore the shared blogs.</span>
+</a>
+{% endif %}
+<a href="{{ url_for('pages.add_post') }}" class="button button--add">
+    <span>+</span>
+</a>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% from "macros/detailpagefields.html" import render_text_field %}
+
+
+{% extends "layout.html" %}
+{% block main_content %}
+<form name="add_post" method="post" novalidate class="form1">
+    <div class="form__container">
+        {{ form.hidden_tag() }}
+        {{render_text_field(form.title)}}
+        {{render_text_field(form.post)}}
+
+        <div>
+            {{ form.submit1(class_="button button--form") }}   {{ form.submit2(class_="button1 button--form1") }}
+        </div>
+        <div>
+          
+        </div>
+        
+    </div>
+</form>
+<a href="{{ url_for('pages.share') }}" class="link1">
+    <span class="table__empty1">Tap here to explore the shared blogs.</span>
+</a>
+{% endblock %}

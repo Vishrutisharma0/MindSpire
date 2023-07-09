@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block main_content %}
+{% if blog_data1 %}
+    <span class="share__text">Indulge in the insightful blogs shared by people.</span>
+</a>
+<table class="table">
+    <colgroup>
+        <col style="width: 100%">
+     
+    </colgroup>
+    <thead>
+        <tr class="table__header">
+            <th class="table__cell table__cell--header"></th>
+            <th class="table__cell table__cell--header"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for blog1 in blog_data1 %}
+        <tr>
+            <td class="table__cell">
+                <p class="table__blogTitle">{{ blog1.title }}</p>
+                <p class="table__blogPost">{{ blog1.post|safe}}</p>
+                
+            </td>
+            <tr class="table__cell">
+                {% if blog1.likes %}
+                    {% if user._id in blog1.liked_by %}
+                       <td> <a href="#" class="table__link liked">
+                            <span class="heart-icon">&hearts;</span>
+                        </a><span class="likes">{{ blog1.likes }}</span></td>
+                    {% else %}
+                       <td> <a href="{{ url_for('pages.add_like', _id=blog1._id) }}" class="table__link">
+                            <span class="heart-icon">&hearts;</span>
+                        </a><span class="likes">{{ blog1.likes }}</span></td>
+                    {% endif %}
+                {% else %}
+                    <td><a href="{{ url_for('pages.add_like', _id=blog1._id) }}" class="table__link">
+                        <span class="heart-icon">&hearts;</span>
+                    </a><span class="likes">{{ blog1.likes }}</span></td>
+                {% endif %}
+         
+            </tr>
+            <tr><td class="table__line"></td></tr>
+            
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="table__empty">Nothing to show here <a href="{{ url_for('pages.add_post') }}" class="link">Share one!</a></p>
+{% endif %}
+<a href="{{ url_for('pages.add_post') }}" class="button button--add">
+    <span>+</span>
+</a>
+{% endblock %}

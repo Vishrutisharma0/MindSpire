@@ -1,0 +1,67 @@
+{% macro header(email,theme) %}
+{% from "macros/svgs.html" import sun, moon %}
+
+<header class="header">
+    <div class="nav-container">
+        <a href="{{url_for('pages.home')}}" class="header__logo">
+            <img src="{{ url_for('static', filename='logo1.svg') }}" class="logo__icon" alt="Logo">
+
+            <span class="logo__name">MindSpire</span>
+        </a>
+        <nav class="nav">
+            {%- if not email %}
+            <a
+                href="{{url_for('pages.login')}}"
+                class="nav__link {{ 'nav__link--active' if request.path == url_for('pages.login') }}"
+            >
+                <span class="nav__item">Log in</span>
+            </a>
+            <a
+                href="{{url_for('pages.register')}}"
+                class="nav__link {{ 'nav__link--active' if request.path == url_for('pages.register') }}"
+            >
+                <span class="nav__item">Register</span>
+            </a>
+        {% else %}
+
+        {%  if request.path == url_for('pages.index') %}
+        <a 
+        href="{{ url_for('pages.share') }}"
+        class="nav__link "
+    >
+        <span class="nav__item">Shared</span>
+    </a>
+    <a
+    href="{{url_for('pages.logout')}}"
+    class="nav__link"
+>
+    <span class="nav__item">Log out</span>
+</a>
+    {% else %}
+            <a 
+                href="{{ url_for('pages.index') }}"
+                class="nav__link "
+            >
+                <span class="nav__item">Saved</span>
+            </a>
+            <a
+                href="{{url_for('pages.logout')}}"
+                class="nav__link"
+            >
+                <span class="nav__item">Log out</span>
+            </a>
+            {% endif %}
+        {% endif %}
+        <a href="{{url_for('pages.toggle_theme',current_page=request.path)}}"
+        class="nav__link">
+    <span class="nav__item">
+        {% if theme == "dark" %}
+        {{ sun("nav__icon" )}}
+        {% else %}
+        {{ moon("nav__icon" )}}
+        {% endif %}
+    </span></a>
+        </nav>
+    </div>
+</header>
+{% endmacro %}
