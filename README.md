@@ -30,4 +30,4 @@ To use the project, follow these instructions:
 - Backend: Flask, Jinja2
 - Database: MongoDB
 
-
+## Screenshots
