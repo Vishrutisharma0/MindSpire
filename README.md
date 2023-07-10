@@ -1,5 +1,5 @@
 # MindSpire
-MindSpire is a responsive website, meticulously crafted with HTML, CSS, Flask, Jinja2 templating engine and MongoDB, that empowers you to create, save, and share your inspiring blogs. With the delightful feature of both light and dark modes, MindSpire ensures a visually stunning and personalized experience to suit your preferences
+MindSpire is a responsive website, meticulously crafted with HTML, CSS, Flask, Jinja2 templating engine and MongoDB, that empowers you to create, save, and share your inspiring blogs. With the delightful feature of both light and dark modes, MindSpire ensures a visually stunning and personalized experience to suit your preferences.
 
 ## Installation
 
