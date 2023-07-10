@@ -30,11 +30,7 @@ To use the project, follow these instructions:
 - Backend: Flask, Jinja2
 - Database: MongoDB
 
-## Screenshots
-![mind3](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/f1babd2e-8001-46b1-9a1e-e4ce2081bb79)
-![mind2](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/8199317b-3226-4d72-96f8-bbf9b28e904d)
-![mind4](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/73b26ac6-85d9-4c29-badd-efc673b7f5d6)
-![mind5](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/413fbe4a-a944-4ecc-8ab1-bb12516c700d)
-![mind6](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/56402eff-ba80-479d-93ef-eaef521f5dfe)
+## Visit project in production
+[MindSpire](https://mindspire-icrj.onrender.com/)
 
-![mind7](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/32b61fb4-aaf5-43de-8f10-294eed986c46)
+
