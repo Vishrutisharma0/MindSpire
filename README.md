@@ -29,7 +29,10 @@ To use the project, follow these instructions:
 - Frontend: HTML, CSS
 - Backend: Flask, Jinja2
 - Database: MongoDB
-- 
+  
+## Visit project in production
+[MindSpire](https://mindspire-icrj.onrender.com/)
+
 ## Screenshots
 ![mind3](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/b5377cea-5747-41c1-b07e-f8b6b31b183d)
 ![mind2](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/8a085ec6-0580-4fb9-a05f-cb98f61a0ef8)
@@ -39,8 +42,5 @@ To use the project, follow these instructions:
 
 ![mind7](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/d58e4622-7b64-49ea-b1ee-b3e16b725587)
 
-
-## Visit project in production
-[MindSpire](https://mindspire-icrj.onrender.com/)
 
 
