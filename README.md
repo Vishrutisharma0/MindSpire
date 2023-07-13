@@ -34,12 +34,24 @@ To use the project, follow these instructions:
 [MindSpire](https://mindspire-icrj.onrender.com/)
 
 ## Screenshots
+- Register yourself.
 ![mind3](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/b5377cea-5747-41c1-b07e-f8b6b31b183d)
+
+- Log in.
 ![mind2](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/8a085ec6-0580-4fb9-a05f-cb98f61a0ef8)
+
+- Create a blog post. Save or directly share.
 ![mind4](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/be24a662-41c9-4dc4-bb4e-b4b6cd2940d7)
+
+- View the saved blog post. You can also share it afterwards.
 ![mind5](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/796f2ca6-22c1-476d-b866-3563c61d3eb7)
+
+- Click on the share button.
 ![mind6](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/e7cec53d-7b55-4a32-9563-ab954f7995d8)
 
+- Your blog will be shared with the other registered users.
+  
+  
 ![mind7](https://github.com/Vishrutisharma0/MindSpire/assets/83419687/d58e4622-7b64-49ea-b1ee-b3e16b725587)
 
 
